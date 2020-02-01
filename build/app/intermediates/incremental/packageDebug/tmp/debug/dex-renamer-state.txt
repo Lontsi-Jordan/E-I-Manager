@@ -1,0 +1,4 @@
+#Tue Jan 21 20:19:01 WAT 2020
+base.0=/home/parker/AndroidStudioProjects/budget_manager/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

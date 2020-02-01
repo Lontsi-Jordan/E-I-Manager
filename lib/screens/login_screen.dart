@@ -1,3 +1,4 @@
+import 'package:budget_manager/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -7,6 +8,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  String _email;
+  String _password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,13 +46,24 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: 30.0,),
                       TextFormField(
                         decoration: InputDecoration(
-                          labelText: 'Username',
-                          hintText: 'Username',
+                          labelText: 'Email',
+                          hintText: 'Email',
                           hintStyle: TextStyle(color:Colors.white),
                           labelStyle: TextStyle(color:Colors.white),
-                          icon: Icon(Icons.person,color: Colors.white,),
+                          icon: Icon(Icons.email,color: Colors.white,),
                           filled: true
                         ),
+                        onSaved: (value){
+                          setState(() {
+                            _email = value;
+                          });
+                        },
+                        validator: (value){
+                          if(value.isEmpty){
+                            return "Email is required";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(height: 12.0,),
                       TextFormField(
@@ -62,13 +76,29 @@ class _LoginPageState extends State<LoginPage> {
                           icon: Icon(Icons.lock_open,color: Colors.white,),
                         ),
                         obscureText: true,
+                        onSaved: (value){
+                          setState(() {
+                            _password = value;
+                          });
+                        },
+                        validator: (value){
+                          if(value.isEmpty){
+                            return "Password is required";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(height: 12.0,),
                       FlatButton(
                         child: Text('LOGIN',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
                         color: Colors.amber,
                         onPressed: (){
+                          if(_formKey.currentState.validate()){
+                            _formKey.currentState.save();
 
+                          }else{
+
+                          }
                         },
                       ),
                       SizedBox(height: 12.0,),
@@ -103,10 +133,17 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text('forgot password?',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                       ),
                       Divider(height: 10.0,),
-                      Container(
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.symmetric(vertical: 8.0),
-                        child: Text('Sign In',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,MaterialPageRoute(
+                              builder: (BuildContext context) => RegisterScreen()
+                          ));
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.symmetric(vertical: 8.0),
+                          child: Text('Register',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                        ),
                       ),
                       Divider(height: 10.0,),
                     ],

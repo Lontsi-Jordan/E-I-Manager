@@ -1,6 +1,6 @@
 import 'package:budget_manager/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:alertify/alertify.dart';
+import 'package:toast/toast.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -149,7 +149,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           if (_formKey.currentState.validate()) {
                             _formKey.currentState.save();
                             _createAccount(_email, _password);
-                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (BuildContext context)=>LoginPage()));
 
                           } else {
 
@@ -194,8 +193,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Future _createAccount(String email,String password) async{
     FirebaseUser user = await  _auth.createUserWithEmailAndPassword(email: email, password: password)
         .then((newUser){
-          print('Account created');
+          Toast.show("Account created", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
+          Navigator.pushReplacement(context,MaterialPageRoute(builder: (BuildContext context)=>LoginPage()));
         })
-        .catchError((e)=> print(e));
+        .catchError((e)=> Toast.show("This email is already use", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3));
   }
 }

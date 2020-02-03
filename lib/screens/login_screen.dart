@@ -2,7 +2,7 @@ import 'package:budget_manager/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:alertify/alertify.dart';
+import 'package:toast/toast.dart';
 import 'home_screen.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -127,12 +127,15 @@ class _LoginPageState extends State<LoginPage> {
                             onTap: (){
                               _handleSignIn()
                                   .then((FirebaseUser user){
-                                showToast("Authenticate success",gravity: Toast.BOTTOM);
+                                Toast.show("Authenticate success", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
                                 Navigator.pushReplacement(
                                     context, MaterialPageRoute(builder: (BuildContext context)=> Home(user: user,googleSignIn: _googleSignIn,)));
                               }
                               )
-                                  .catchError((e) => showToast("Erreur d'authentification",gravity: Toast.BOTTOM)
+                                  .catchError((e){
+                                    print(e);
+                                    Toast.show("Authenticate failed", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3);
+                                  }
                               );
                             },
                             child: Container(
@@ -215,10 +218,13 @@ class _LoginPageState extends State<LoginPage> {
   _signInWithEmailAndPassword(String email,String password){
     _auth.signInWithEmailAndPassword(email: email, password: password)
         .then((newUser){
+          Toast.show("Authenticate success", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
           Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (BuildContext context)=> Home(user: newUser.user,)));
         })
-        .catchError((e)=>print(e));
+        .catchError((e){
+          Toast.show("There is no user record corresponding to this identifier", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3);
+        });
   }
 
 }

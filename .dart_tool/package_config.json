@@ -2,12 +2,6 @@
   "configVersion": 2,
   "packages": [
     {
-      "name": "alertify",
-      "rootUri": "file:///home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/alertify-0.0.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
       "name": "archive",
       "rootUri": "file:///home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.11",
       "packageUri": "lib/",
@@ -266,6 +260,12 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "toast",
+      "rootUri": "file:///home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/toast-0.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "typed_data",
       "rootUri": "file:///home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6",
       "packageUri": "lib/",
@@ -290,7 +290,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-02-03T14:46:13.710700Z",
+  "generated": "2020-02-03T17:59:51.309471Z",
   "generator": "pub",
   "generatorVersion": "2.7.0"
 }

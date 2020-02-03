@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:toast/toast.dart';
 import 'login_screen.dart';
-import 'package:alertify/alertify.dart';
 
 class Home extends StatefulWidget {
   final FirebaseUser user;
@@ -39,6 +39,7 @@ class _HomeState extends State<Home> {
                   setState(() {
                     widget.googleSignIn.signOut();
                   });
+                  Toast.show("Log out success", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 5);
                   Navigator.pushReplacement(context, MaterialPageRoute(
                       builder: (BuildContext context)=> LoginPage()
                   ));

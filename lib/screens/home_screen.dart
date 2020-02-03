@@ -2,13 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 import 'login_screen.dart';
+import 'package:alertify/alertify.dart';
 
 class Home extends StatefulWidget {
   final FirebaseUser user;
   final GoogleSignIn googleSignIn;
-
   const Home({Key key, this.user, this.googleSignIn}) : super(key: key);
 
   @override
@@ -16,6 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

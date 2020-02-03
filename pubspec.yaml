@@ -25,9 +25,9 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_fonts: ^0.3.2
   dio: ^3.0.8
-  toast: ^0.1.5
   google_sign_in: ^4.1.1
   firebase_auth: ^0.15.4
+  alertify: ^0.0.1
 
 dev_dependencies:
   flutter_test:

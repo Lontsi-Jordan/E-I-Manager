@@ -1,8 +1,9 @@
 import 'package:budget_manager/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
-import 'package:toast/toast.dart';
-import 'dart:convert';
+import 'package:alertify/alertify.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -17,9 +18,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String _email;
   String _password;
 
-  void showToast(String msg, {int duration, int gravity}) {
-    Toast.show(msg, context, duration: duration, gravity: gravity);
-  }
     @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,26 +145,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       SizedBox(height: 12.0,),
                       GestureDetector(
-                        onTap: ()async{
-                          if(_formKey.currentState.validate()){
+                        onTap: ()async {
+                          if (_formKey.currentState.validate()) {
                             _formKey.currentState.save();
-                            Dio dio = new Dio();
-                            Response response;
-                            try{
-                              response = await dio.post("http://192.168.43.7:3000/api/users/create",
-                                  data:{
-                                    'firstName': _firstName,
-                                    'lastName':_lastName,
-                                    'email':_email,
-                                    'password':_password,
-                                  }
-                              );
-                              showToast(json.decode(response.data),gravity: Toast.BOTTOM);
-                              Navigator.pushReplacement(context,MaterialPageRoute(builder: (BuildContext context)=>LoginPage()));
-                            }catch(e){
-                              print(e);
-                            }
-                          }else{
+                            _createAccount(_email, _password);
+                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (BuildContext context)=>LoginPage()));
+
+                          } else {
 
                           }
                         },
@@ -179,46 +164,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           child: Text('REGISTER',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
                         ),
-                      ),
-                      SizedBox(height: 12.0,),
-                      Center(
-                        child: Text('Or',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                      ),
-                      SizedBox(height: 12.0,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          GestureDetector(
-                            onTap: (){
-
-                            },
-                            child: Container(
-                              height: 50.0,
-                              width: 100,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(2.0)
-                              ),
-                              child: Text('Google',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: (){
-
-                            },
-                            child: Container(
-                              height: 50.0,
-                              width: 100,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(2.0)
-                              ),
-                              child: Text('Google',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                            ),
-                          ),
-                        ],
                       ),
                       SizedBox(height: 12.0,),
                       Divider(color: Colors.grey.shade50,),
@@ -244,5 +189,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
+  }
+
+  Future _createAccount(String email,String password) async{
+    FirebaseUser user = await  _auth.createUserWithEmailAndPassword(email: email, password: password)
+        .then((newUser){
+          print('Account created');
+        })
+        .catchError((e)=> print(e));
   }
 }

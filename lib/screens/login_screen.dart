@@ -2,7 +2,7 @@ import 'package:budget_manager/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:toast/toast.dart';
+import 'package:alertify/alertify.dart';
 import 'home_screen.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -17,9 +17,6 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   String _email;
   String _password;
-  void showToast(String msg, {int duration, int gravity}) {
-    Toast.show(msg, context, duration: duration, gravity: gravity);
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         onTap: (){
                           if(_formKey.currentState.validate()){
                             _formKey.currentState.save();
-
+                            _signInWithEmailAndPassword(_email, _password);
                           }else{
 
                           }
@@ -213,6 +210,15 @@ class _LoginPageState extends State<LoginPage> {
 
     final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
     return user;
+  }
+
+  _signInWithEmailAndPassword(String email,String password){
+    _auth.signInWithEmailAndPassword(email: email, password: password)
+        .then((newUser){
+          Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (BuildContext context)=> Home(user: newUser.user,)));
+        })
+        .catchError((e)=>print(e));
   }
 
 }

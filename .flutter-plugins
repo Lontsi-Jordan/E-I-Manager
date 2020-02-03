@@ -1,2 +1,8 @@
 # This is a generated file; do not edit or check into version control.
+firebase_auth=/home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.15.4/
+firebase_auth_web=/home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-0.1.2/
+firebase_core=/home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.3+3/
+firebase_core_web=/home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2/
+google_sign_in=/home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.1.1/
+google_sign_in_web=/home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.8.3/
 path_provider=/home/parker/dev/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.5.1/

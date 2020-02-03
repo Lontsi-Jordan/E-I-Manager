@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'E-I Manager',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
         brightness: Brightness.light

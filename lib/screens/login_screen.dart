@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Colors.amber,
-                            borderRadius: BorderRadius.circular(2.0)
+                            borderRadius: BorderRadius.circular(50.0)
                           ),
                           child: Text('LOGIN',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
                         ),
@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(2.0)
+                                  borderRadius: BorderRadius.circular(50.0)
                               ),
                               child: Text('Google',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                             ),
@@ -159,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(2.0)
+                                  borderRadius: BorderRadius.circular(50.0)
                               ),
                               child: Text('Facebook',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                             ),

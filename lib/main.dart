@@ -1,17 +1,12 @@
-import 'package:budget_manager/screens/home_screen.dart';
 import 'package:budget_manager/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  Future<FirebaseUser> isLogged() async{
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    if(user !=null){
-      return user;
-    }
-    return null;
+/*class MyApp extends StatelessWidget {
+  Future<bool> isSignedIn() async {
+    final currentUser = await FirebaseAuth.instance.currentUser();
+    return currentUser != null;
   }
   @override
   Widget build(BuildContext context) {
@@ -22,8 +17,33 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
         brightness: Brightness.light
       ),
-      home: isLogged() ==null?LoginPage():Home(),
+      home: isSignedIn ==null?LoginPage():Home(),
+    );
+  }
+}*/
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'E-I Manager',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primarySwatch: Colors.deepOrange,
+          brightness: Brightness.light,
+          textTheme: Theme.of(context).textTheme.apply(
+              fontFamily: 'Open Sans',
+              bodyColor: Colors.white,
+              displayColor: Colors.white
+          ),
+      ),
+      home: LoginPage(),
     );
   }
 }
+
 

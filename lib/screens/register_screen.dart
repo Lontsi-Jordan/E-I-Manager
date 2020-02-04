@@ -159,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               color: Colors.amber,
-                              borderRadius: BorderRadius.circular(2.0)
+                              borderRadius: BorderRadius.circular(50.0)
                           ),
                           child: Text('REGISTER',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
                         ),

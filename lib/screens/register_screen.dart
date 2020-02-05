@@ -45,10 +45,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top:30.0),
                         child: Center(
-                          child: Text("REGISTER",style:TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                          child: Text("Register",style:TextStyle(
+                            fontSize: 40,
+                            fontFamily: 'Billabong',
+                            fontWeight: FontWeight.w500,
                             color: Colors.white,
+                            letterSpacing: 1
                           ),),
                         ),
                       ),
@@ -57,8 +59,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                             labelText: 'First Name',
                             hintText: 'First Name',
-                            hintStyle: TextStyle(color:Colors.white),
-                            labelStyle: TextStyle(color:Colors.white),
+                            hintStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
+                            labelStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                             icon: Icon(Icons.person,color: Colors.white,),
                             filled: true
                         ),
@@ -79,9 +81,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                           hintText: 'Last Name',
                           labelText: 'Last Name',
+                          hintStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
+                          labelStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                           filled: true,
-                          hintStyle: TextStyle(color:Colors.white),
-                          labelStyle: TextStyle(color:Colors.white),
                           icon: Icon(Icons.person,color: Colors.white,),
                         ),
                         onSaved: (value){
@@ -101,9 +103,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                           hintText: 'Email',
                           labelText: 'Email',
+                          hintStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
+                          labelStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                           filled: true,
-                          hintStyle: TextStyle(color:Colors.white),
-                          labelStyle: TextStyle(color:Colors.white),
                           icon: Icon(Icons.email,color: Colors.white,),
                         ),
                         keyboardType: TextInputType.emailAddress,
@@ -124,11 +126,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                           hintText: 'Password',
                           labelText: 'Password',
+                          hintStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
+                          labelStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                           filled: true,
-                          hintStyle: TextStyle(color:Colors.white),
-                          labelStyle: TextStyle(color:Colors.white),
                           icon: Icon(Icons.lock_open,color: Colors.white,),
-                          helperText: ''
+                          helperText: 'Min length 8 caracters*',
                         ),
                         obscureText: true,
                         onSaved: (value){
@@ -139,6 +141,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         validator: (value){
                           if(value.isEmpty){
                             return "Password is required";
+                          }else if(value.length < 8){
+                            return 'Min length 8 characters';
                           }
                           return null;
                         },
@@ -161,7 +165,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               color: Colors.amber,
                               borderRadius: BorderRadius.circular(50.0)
                           ),
-                          child: Text('REGISTER',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                          child: Text('REGISTER',style: TextStyle(letterSpacing: 0.5,fontWeight: FontWeight.bold,color: Colors.white,)),
                         ),
                       ),
                       SizedBox(height: 12.0,),
@@ -175,7 +179,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text('Login',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                          child: Text('Login',style: TextStyle(letterSpacing: 0.5,fontWeight: FontWeight.bold,color: Colors.white,),),
                         ),
                       ),
                       Divider(color: Colors.grey.shade50,),

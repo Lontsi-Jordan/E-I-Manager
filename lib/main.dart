@@ -34,11 +34,10 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.deepOrange,
+          accentColor: Color(0xFFFEF9EB),
           brightness: Brightness.light,
           textTheme: Theme.of(context).textTheme.apply(
               fontFamily: 'Open Sans',
-              bodyColor: Colors.white,
-              displayColor: Colors.white
           ),
       ),
       home: LoginPage(),

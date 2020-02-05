@@ -44,9 +44,11 @@ class _LoginPageState extends State<LoginPage> {
                         padding: const EdgeInsets.only(top:30.0),
                         child: Center(
                           child: Text("Login",style:TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 40,
+                            fontFamily: 'Billabong',
+                            fontWeight: FontWeight.w500,
                             color: Colors.white,
+                            letterSpacing: 1
                           ),),
                         ),
                       ),
@@ -55,8 +57,8 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: InputDecoration(
                           labelText: 'Email',
                           hintText: 'Email',
-                          hintStyle: TextStyle(color:Colors.white),
-                          labelStyle: TextStyle(color:Colors.white),
+                          hintStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
+                          labelStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                           icon: Icon(Icons.email,color: Colors.white,),
                           filled: true
                         ),
@@ -78,8 +80,8 @@ class _LoginPageState extends State<LoginPage> {
                           hintText: 'Password',
                           labelText: 'Password',
                           filled: true,
-                          hintStyle: TextStyle(color:Colors.white),
-                          labelStyle: TextStyle(color:Colors.white),
+                          hintStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
+                          labelStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                           icon: Icon(Icons.lock_open,color: Colors.white,),
                         ),
                         obscureText: true,
@@ -112,12 +114,12 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.amber,
                             borderRadius: BorderRadius.circular(50.0)
                           ),
-                          child: Text('LOGIN',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                          child: Text('LOGIN',style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 0.5,color: Colors.white,)),
                         ),
                       ),
                       SizedBox(height: 12.0,),
                       Center(
-                        child: Text('Or',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                        child: Text('Or',style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 0.5,color: Colors.white,),),
                       ),
                       SizedBox(height: 12.0,),
                       Row(
@@ -146,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.blue,
                                   borderRadius: BorderRadius.circular(50.0)
                               ),
-                              child: Text('Google',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                              child: Text('Google',style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 0.5,color: Colors.white,),),
                             ),
                           ),
                           GestureDetector(
@@ -161,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.blue,
                                   borderRadius: BorderRadius.circular(50.0)
                               ),
-                              child: Text('Facebook',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                              child: Text('Facebook',style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 0.5,color: Colors.white,),),
                             ),
                           ),
                         ],
@@ -171,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
                       Container(
                         alignment: Alignment.center,
                         padding: EdgeInsets.symmetric(vertical: 8.0),
-                        child: Text('forgot password?',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                        child: Text('forgot password?',style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 0.5,color: Colors.white,),),
                       ),
                       Divider(color: Colors.grey.shade50,),
                       InkWell(
@@ -183,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.symmetric(vertical: 8.0),
-                          child: Text('Register',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                          child: Text('Register',style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 0.5,color: Colors.white,),),
                         ),
                       ),
                       Divider(color: Colors.grey.shade50,),

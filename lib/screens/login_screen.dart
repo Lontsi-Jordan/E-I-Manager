@@ -1,12 +1,10 @@
+import 'package:budget_manager/partials/loading.dart';
 import 'package:budget_manager/screens/register_screen.dart';
+import 'package:budget_manager/services/auth.dart';
+import 'package:budget_manager/models/user.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:toast/toast.dart';
 import 'home_screen.dart';
-
-final FirebaseAuth _auth = FirebaseAuth.instance;
-final GoogleSignIn _googleSignIn = new GoogleSignIn();
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,11 +13,14 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final AuthService authService = AuthService();
   String _email;
   String _password;
+  bool _obscure = true;
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading?Loading():Scaffold(
       body: GestureDetector(
         onTap: (){
           FocusScope.of(context).requestFocus(FocusNode());
@@ -54,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 30.0,),
                       TextFormField(
+                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           labelText: 'Email',
                           hintText: 'Email',
@@ -83,8 +85,20 @@ class _LoginPageState extends State<LoginPage> {
                           hintStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                           labelStyle: TextStyle(color:Colors.white,letterSpacing: 0.5),
                           icon: Icon(Icons.lock_open,color: Colors.white,),
+                          suffixIcon: IconButton(
+                            icon: Icon(_obscure?Icons.visibility_off:Icons.visibility,size: 20,color: Colors.white,),
+                            onPressed: (){
+                              setState(() {
+                                if(_obscure == true){
+                                  _obscure = false;
+                                }else{
+                                  _obscure = true;
+                                }
+                              });
+                            }
+                          ),
                         ),
-                        obscureText: true,
+                        obscureText: _obscure,
                         onSaved: (value){
                           setState(() {
                             _password = value;
@@ -102,7 +116,21 @@ class _LoginPageState extends State<LoginPage> {
                         onTap: (){
                           if(_formKey.currentState.validate()){
                             _formKey.currentState.save();
-                            _signInWithEmailAndPassword(_email, _password);
+                            setState(() {
+                              loading = true;
+                            });
+                            authService.signInWithEmailAndPassword(_email, _password)
+                            .then((User user){
+                              Toast.show("Authenticate success", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
+                              Navigator.pushReplacement(
+                              context, MaterialPageRoute(builder: (BuildContext context)=> Home(user: user,)));
+                            })
+                            .catchError((e){
+                              setState(() {
+                                loading = false;
+                              });
+                              Toast.show("There is no user record corresponding to this identifier", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3);
+                            });
                           }else{
 
                           }
@@ -111,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50.0,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: Colors.amber,
+                            color: Colors.amber.shade600,
                             borderRadius: BorderRadius.circular(50.0)
                           ),
                           child: Text('LOGIN',style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 0.5,color: Colors.white,)),
@@ -127,18 +155,21 @@ class _LoginPageState extends State<LoginPage> {
                         children: <Widget>[
                           GestureDetector(
                             onTap: (){
-                              _handleSignIn()
-                                  .then((FirebaseUser user){
+                              setState(() {
+                                loading=true;
+                              });
+                              authService.signInWithGoogle()
+                              .then((User user){
                                 Toast.show("Authenticate success", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
                                 Navigator.pushReplacement(
-                                    context, MaterialPageRoute(builder: (BuildContext context)=> Home(user: user,googleSignIn: _googleSignIn,)));
-                              }
-                              )
-                                  .catchError((e){
-                                    print(e);
-                                    Toast.show("Authenticate failed", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3);
-                                  }
-                              );
+                                    context, MaterialPageRoute(builder: (BuildContext context)=> Home(user: user)));
+                              })
+                              .catchError((e){
+                                setState(() {
+                                  loading = false;
+                                });
+                                Toast.show("Authenticate failed", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3);
+                              });
                             },
                             child: Container(
                               height: 50.0,
@@ -153,7 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           GestureDetector(
                             onTap: () {
-
+                              
                             },
                             child: Container(
                               height: 50.0,
@@ -199,34 +230,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  Future<FirebaseUser> _handleSignIn() async{
-    //get google account
-    final GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
-
-    //authenticate user use google account
-    final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
-
-    // get credentials of user
-    final AuthCredential credential = GoogleAuthProvider.getCredential(
-      accessToken: googleSignInAuthentication.accessToken,
-      idToken: googleSignInAuthentication.idToken,
-    );
-
-    final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
-    return user;
-  }
-
-  _signInWithEmailAndPassword(String email,String password){
-    _auth.signInWithEmailAndPassword(email: email, password: password)
-        .then((newUser){
-          Toast.show("Authenticate success", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
-          Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (BuildContext context)=> Home(user: newUser.user,)));
-        })
-        .catchError((e){
-          Toast.show("There is no user record corresponding to this identifier", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3);
-        });
-  }
-
 }

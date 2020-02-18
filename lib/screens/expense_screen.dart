@@ -1,5 +1,13 @@
+import 'package:budget_manager/models/expense.dart';
+import 'package:budget_manager/models/user.dart';
+import 'package:budget_manager/screens/transactions..dart';
+import 'package:budget_manager/services/database_expense.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+import 'package:toast/toast.dart';
+
+import 'home_screen.dart';
 class ExpenseScreen extends StatefulWidget {
   @override
   _ExpenseScreenState createState() => _ExpenseScreenState();
@@ -7,6 +15,7 @@ class ExpenseScreen extends StatefulWidget {
 
 class _ExpenseScreenState extends State<ExpenseScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   TextEditingController _dateController = new TextEditingController();
   var _categories = [
     "Food",
@@ -24,11 +33,10 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
   ];
   String _categoriesSelectedValue;
   String _modeSelected;
-  int amount;
+  String amount;
   String note;
   String _dateFormat = DateFormat('yyyy-MM-dd').format(new DateTime.now());
-
-
+  String dateTime;
   Future<Null> _selectedDate(BuildContext context) async{
     final DateTime picked = await showDatePicker(
         context: context,
@@ -45,6 +53,8 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<User>(context);
+    final DatabaseExpense databaseExpense = DatabaseExpense();
     return Scaffold(
       appBar: AppBar(
         title: Text('Add Expense',style: TextStyle(
@@ -90,7 +100,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                               fontWeight: FontWeight.w400,
                               letterSpacing: 0.5
                             ),
-                            errorStyle: TextStyle(color: Colors.redAccent,fontSize: 16.0),
+                            errorStyle: TextStyle(color: Colors.redAccent,fontSize: 13.0),
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
                           ),
                           isEmpty: _categoriesSelectedValue == '',
@@ -120,6 +130,17 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                           ),
                         );
                       },
+                      onSaved: (value){
+                        setState(() {
+                          _categoriesSelectedValue = value;
+                        });
+                      },
+                      /*validator: (value){
+                        if(value.isEmpty){
+                          return 'Category is required';
+                        }
+                        return null;
+                      },*/
                     ),
                     SizedBox(height: 10.0,),
                     TextFormField(
@@ -132,9 +153,20 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                             fontWeight: FontWeight.w400,
                             letterSpacing: 0.5
                         ),
-                        errorStyle: TextStyle(color: Colors.redAccent,fontSize: 16.0),
+                        errorStyle: TextStyle(color: Colors.redAccent,fontSize: 13.0),
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
                       ),
+                      onSaved: (value){
+                        setState(() {
+                          amount = value;
+                        });
+                      },
+                      validator: (value){
+                        if(value.isEmpty){
+                          return 'Amout is required';
+                        }
+                        return null;
+                      },
                     ),
                     SizedBox(height: 10.0,),
                     FormField<String>(
@@ -185,12 +217,23 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                           ),
                         );
                       },
+                      onSaved: (value){
+                        setState(() {
+                          _modeSelected = value;
+                        });
+                      },
+                      /*validator: (String value){
+                        if(value.isEmpty){
+                          return 'Mode of paiement is required';
+                        }
+                        return null;
+                      },*/
                     ),
                     SizedBox(height: 10.0,),
                     TextFormField(
                       controller: _dateController,
                       decoration: InputDecoration(
-                        labelText: 'DateTime',
+                        labelText: 'Date',
                         labelStyle: TextStyle(
                             fontFamily: 'Open Sans',
                             color: Colors.black,
@@ -198,7 +241,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                             fontWeight: FontWeight.w400,
                             letterSpacing: 0.5
                         ),
-                        errorStyle: TextStyle(color: Colors.redAccent,fontSize: 16.0),
+                        errorStyle: TextStyle(color: Colors.redAccent,fontSize: 13.0),
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
                         suffixIcon: IconButton(
                           icon: Icon(Icons.date_range,size: 14,),
@@ -217,18 +260,23 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                           }
                         ),
                       ),
-                      /*onChanged: (value){
+                      onSaved: (value){
                         setState(() {
-                          _dateFormat = DateFormat('yyyy-MM-dd').parse(value).toString();
+                          dateTime = value;
                         });
-                      },*/
+                      },
+                      validator: (value){
+                        if(value.isEmpty){
+                          return 'Date is required';
+                        }
+                        return null;
+                      },
                     ),
                     SizedBox(height: 10.0,),
                     TextFormField(
                       maxLines: 2,
-                      enabled: false,
                       decoration: InputDecoration(
-                        labelText: 'Note',
+                        labelText: 'Description',
                         labelStyle: TextStyle(
                             fontFamily: 'Open Sans',
                             color: Colors.black,
@@ -236,27 +284,44 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                             fontWeight: FontWeight.w400,
                             letterSpacing: 0.5
                         ),
-                        errorStyle: TextStyle(color: Colors.redAccent,fontSize: 16.0),
+                        errorStyle: TextStyle(color: Colors.redAccent,fontSize: 13.0),
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
                       ),
+                      onSaved: (value){
+                        setState(() {
+                          note = value;
+                        });
+                      },
+                      validator: (value){
+                        if(value.isEmpty){
+                          return 'Description is required';
+                        }
+                        return null;
+                      },
                     ),
                     SizedBox(height: 10.0,),
                     GestureDetector(
                       onTap: ()async {
                         if (_formKey.currentState.validate()) {
                           _formKey.currentState.save();
-                          print('ok');
+                          Expense exp = new Expense(_categoriesSelectedValue, amount, _modeSelected, dateTime, note,user.uid);
+                          databaseExpense.addExpense(exp)
+                          .then((result) {
+                            Toast.show("Expense created", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
+                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (BuildContext context)=>Transactions()));
+                          })
+                          .catchError((e)=> Toast.show("This email is already use", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3));
 
                         } else {
-
+                          Toast.show("All fields are required", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
                         }
                       },
                       child: Container(
                         height: 50.0,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(50.0)
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(50.0)
                         ),
                         child: Text('SAVE',style: TextStyle(letterSpacing: 0.5,fontWeight: FontWeight.bold,color:Colors.white)),
                       ),
@@ -270,8 +335,4 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
       ),
     );
   }
-}
-class AlwaysDisabledFocusNode extends FocusNode {
-  @override
-  bool get hasFocus => false;
 }

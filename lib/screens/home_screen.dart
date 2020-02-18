@@ -1,21 +1,22 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:budget_manager/models/user.dart';
+import 'package:budget_manager/screens/transactions..dart';
+import 'package:budget_manager/services/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:toast/toast.dart';
 import 'expense_screen.dart';
 import 'login_screen.dart';
 
 class Home extends StatefulWidget {
-  final FirebaseUser user;
-  final GoogleSignIn googleSignIn;
-  const Home({Key key, this.user, this.googleSignIn}) : super(key: key);
+  final User user;
+  const Home({Key key, this.user}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  AuthService authService = AuthService();
   Widget Texts(String msg,Color color){
     return Text(msg,style: TextStyle(
         color: color,
@@ -37,7 +38,7 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         elevation: 3.0,
       ),
-      drawer: new Drawer(
+      drawer: Drawer(
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
@@ -66,10 +67,8 @@ class _HomeState extends State<Home> {
               ),),
               trailing: IconButton(
                 icon: Icon(Icons.power_settings_new),
-                onPressed: (){
-                  setState(() {
-                    widget.googleSignIn.signOut();
-                  });
+                onPressed: () async{
+                  await authService.signOut();
                   Toast.show("Log out success", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 5);
                   Navigator.pushReplacement(context, MaterialPageRoute(
                       builder: (BuildContext context)=> LoginPage()
@@ -169,21 +168,28 @@ class _HomeState extends State<Home> {
                                 title: Texts('ADD INCOME',Colors.blue),
                               ),
                             ),
-                            Card(
-                              elevation: 2.0,
-                              color: Colors.deepOrange.shade200,
-                              child: ListTile(
-                                leading: Container(
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                      color: Colors.deepOrange.shade600
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(
+                                    builder: (BuildContext context)=>Transactions()
+                                ));
+                              },
+                              child: Card(
+                                  elevation: 2.0,
+                                  color: Colors.deepOrange.shade200,
+                                  child: ListTile(
+                                    leading: Container(
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(5.0),
+                                          color: Colors.deepOrange.shade600
+                                      ),
+                                      child: Icon(Icons.library_books,size: 50,color: Colors.white,),
+                                    ),
+                                    title: Texts('ALL TRANSACTIONS',Colors.deepOrange),
                                   ),
-                                  child: Icon(Icons.library_books,size: 50,color: Colors.white,),
                                 ),
-                                title: Texts('ALL TRANSACTION',Colors.deepOrange),
-                              ),
                             ),
                             Card(
                               elevation: 2.0,

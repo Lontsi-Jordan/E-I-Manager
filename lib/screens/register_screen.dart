@@ -1,9 +1,8 @@
+import 'package:budget_manager/screens/home_screen.dart';
 import 'package:budget_manager/screens/login_screen.dart';
+import 'package:budget_manager/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
-final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -13,6 +12,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _key = new GlobalKey<ScaffoldState>();
+  bool _obscure = true;
   String _firstName;
   String _lastName;
   String _email;
@@ -131,8 +131,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           filled: true,
                           icon: Icon(Icons.lock_open,color: Colors.white,),
                           helperText: 'Min length 8 caracters*',
+                          helperStyle: TextStyle(color: Colors.red),
+                          suffixIcon: IconButton(
+                              icon: Icon(_obscure?Icons.visibility_off:Icons.visibility,size: 20,color: Colors.white,),
+                              onPressed: (){
+                                setState(() {
+                                  if(_obscure == true){
+                                    _obscure = false;
+                                  }else{
+                                    _obscure = true;
+                                  }
+                                });
+                              }
+                          ),
                         ),
-                        obscureText: true,
+                        obscureText: _obscure,
                         onSaved: (value){
                           setState(() {
                             _password = value;
@@ -152,8 +165,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         onTap: ()async {
                           if (_formKey.currentState.validate()) {
                             _formKey.currentState.save();
-                            _createAccount(_email, _password);
-
+                            AuthService authService = AuthService();
+                            authService.createAccount(_email, _password)
+                            .then((newUser){
+                              Toast.show("Account created", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
+                              Navigator.pushReplacement(context,MaterialPageRoute(builder: (BuildContext context)=>Home(user: newUser,)));
+                            })
+                            .catchError((e)=> Toast.show("This email is already use", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3));
                           } else {
 
                           }
@@ -162,7 +180,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           height: 50.0,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: Colors.amber,
+                              color: Colors.amber.shade600,
                               borderRadius: BorderRadius.circular(50.0)
                           ),
                           child: Text('REGISTER',style: TextStyle(letterSpacing: 0.5,fontWeight: FontWeight.bold,color: Colors.white,)),
@@ -192,14 +210,5 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
-  }
-
-  Future _createAccount(String email,String password) async{
-    FirebaseUser user = await  _auth.createUserWithEmailAndPassword(email: email, password: password)
-        .then((newUser){
-          Toast.show("Account created", context,backgroundColor: Colors.greenAccent,textColor: Colors.white,gravity: Toast.TOP,duration: 3);
-          Navigator.pushReplacement(context,MaterialPageRoute(builder: (BuildContext context)=>LoginPage()));
-        })
-        .catchError((e)=> Toast.show("This email is already use", context,backgroundColor: Colors.red,textColor: Colors.white,gravity: Toast.BOTTOM,duration: 3));
   }
 }

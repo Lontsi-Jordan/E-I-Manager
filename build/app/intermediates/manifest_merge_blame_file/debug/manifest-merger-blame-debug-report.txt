@@ -95,157 +95,169 @@
 59                android:value="com.google.firebase.components.ComponentRegistrar" />
 59-->[:firebase_auth] /home/parker/AndroidStudioProjects/budget_manager/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 60            <meta-data
-60-->[:firebase_core] /home/parker/AndroidStudioProjects/budget_manager/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-61                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
-61-->[:firebase_core] /home/parker/AndroidStudioProjects/budget_manager/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
+60-->[:cloud_firestore] /home/parker/AndroidStudioProjects/budget_manager/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+61                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
+61-->[:cloud_firestore] /home/parker/AndroidStudioProjects/budget_manager/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
 62                android:value="com.google.firebase.components.ComponentRegistrar" />
-62-->[:firebase_core] /home/parker/AndroidStudioProjects/budget_manager/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+62-->[:cloud_firestore] /home/parker/AndroidStudioProjects/budget_manager/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 63            <meta-data
-63-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
-64                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-64-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
+63-->[:firebase_core] /home/parker/AndroidStudioProjects/budget_manager/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+64                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
+64-->[:firebase_core] /home/parker/AndroidStudioProjects/budget_manager/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
 65                android:value="com.google.firebase.components.ComponentRegistrar" />
-65-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
+65-->[:firebase_core] /home/parker/AndroidStudioProjects/budget_manager/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 66            <meta-data
-66-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/ca912bff2260618b5b638fe661521702/play-services-measurement-api-17.2.2/AndroidManifest.xml:30:13-32:85
-67                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-67-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/ca912bff2260618b5b638fe661521702/play-services-measurement-api-17.2.2/AndroidManifest.xml:31:17-139
+66-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
+67                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+67-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
 68                android:value="com.google.firebase.components.ComponentRegistrar" />
-68-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/ca912bff2260618b5b638fe661521702/play-services-measurement-api-17.2.2/AndroidManifest.xml:32:17-82
+68-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
 69            <meta-data
-69-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
-70                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-70-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+69-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/ca912bff2260618b5b638fe661521702/play-services-measurement-api-17.2.2/AndroidManifest.xml:30:13-32:85
+70                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+70-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/ca912bff2260618b5b638fe661521702/play-services-measurement-api-17.2.2/AndroidManifest.xml:31:17-139
 71                android:value="com.google.firebase.components.ComponentRegistrar" />
-71-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
-72        </service>
-73
-74        <activity
-74-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
-75            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-75-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:25:13-85
-76            android:excludeFromRecents="true"
-76-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:26:13-46
-77            android:exported="true"
-77-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:27:13-36
-78            android:launchMode="singleTask"
-78-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:28:13-44
-79            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-79-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
-80            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-80-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
-81
-82        <receiver
-82-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:29:9-33:20
-83            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-83-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:30:13-85
-84            android:enabled="true"
-84-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:31:13-35
-85            android:exported="false" >
-85-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:32:13-37
-86        </receiver>
-87        <receiver
-87-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:34:9-42:20
-88            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-88-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:35:13-100
-89            android:enabled="true"
-89-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:36:13-35
-90            android:exported="true"
-90-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:37:13-36
-91            android:permission="android.permission.INSTALL_PACKAGES" >
-91-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:38:13-69
-92            <intent-filter>
-92-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:39:13-41:29
-93                <action android:name="com.android.vending.INSTALL_REFERRER" />
-93-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:40:17-79
-93-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:40:25-76
-94            </intent-filter>
-95        </receiver>
-96
-97        <service
-97-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:44:9-47:40
-98            android:name="com.google.android.gms.measurement.AppMeasurementService"
-98-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:45:13-84
-99            android:enabled="true"
-99-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:46:13-35
-100            android:exported="false" />
-100-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:47:13-37
-101        <service
-101-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:48:9-52:72
-102            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-102-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:49:13-87
-103            android:enabled="true"
-103-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:50:13-35
-104            android:exported="false"
-104-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:51:13-37
-105            android:permission="android.permission.BIND_JOB_SERVICE" />
-105-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:52:13-69
-106
-107        <receiver
-107-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
-108            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-108-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
-109            android:exported="true"
-109-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
-110            android:permission="com.google.android.c2dm.permission.SEND" >
-110-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
-111            <intent-filter>
-111-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
-112                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-112-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
-112-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
-113            </intent-filter>
-114        </receiver>
-115
-116        <provider
-116-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-117            android:name="com.google.firebase.provider.FirebaseInitProvider"
-117-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-118            android:authorities="com.jordyparker.budget_manager.firebaseinitprovider"
-118-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-119            android:exported="false"
-119-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-120            android:initOrder="100" />
-120-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-121
-122        <activity
-122-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
-123            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-123-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
-124            android:excludeFromRecents="true"
-124-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
-125            android:exported="false"
-125-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
-126            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-126-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
-127        <!--
-128            Service handling Google Sign-In user revocation. For apps that do not integrate with
-129            Google Sign-In, this service will never be started.
-130        -->
-131        <service
-131-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
-132            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-132-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
-133            android:exported="true"
-133-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
-134            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-134-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+71-->[com.google.android.gms:play-services-measurement-api:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/ca912bff2260618b5b638fe661521702/play-services-measurement-api-17.2.2/AndroidManifest.xml:32:17-82
+72            <meta-data
+72-->[com.google.firebase:firebase-firestore:21.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/aedffc9dac843dd068214258fc34506e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
+73                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+73-->[com.google.firebase:firebase-firestore:21.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/aedffc9dac843dd068214258fc34506e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[com.google.firebase:firebase-firestore:21.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/aedffc9dac843dd068214258fc34506e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
+75            <meta-data
+75-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
+76                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+76-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
+78        </service>
+79
+80        <activity
+80-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
+81            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+81-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:25:13-85
+82            android:excludeFromRecents="true"
+82-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:26:13-46
+83            android:exported="true"
+83-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:27:13-36
+84            android:launchMode="singleTask"
+84-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:28:13-44
+85            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+85-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
+86            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+86-->[com.google.firebase:firebase-auth:19.2.0] /home/parker/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
+87
+88        <receiver
+88-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:29:9-33:20
+89            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+89-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:30:13-85
+90            android:enabled="true"
+90-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:31:13-35
+91            android:exported="false" >
+91-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:32:13-37
+92        </receiver>
+93        <receiver
+93-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:34:9-42:20
+94            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+94-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:35:13-100
+95            android:enabled="true"
+95-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:36:13-35
+96            android:exported="true"
+96-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:37:13-36
+97            android:permission="android.permission.INSTALL_PACKAGES" >
+97-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:38:13-69
+98            <intent-filter>
+98-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:39:13-41:29
+99                <action android:name="com.android.vending.INSTALL_REFERRER" />
+99-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:40:17-79
+99-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:40:25-76
+100            </intent-filter>
+101        </receiver>
+102
+103        <service
+103-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:44:9-47:40
+104            android:name="com.google.android.gms.measurement.AppMeasurementService"
+104-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:45:13-84
+105            android:enabled="true"
+105-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:46:13-35
+106            android:exported="false" />
+106-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:47:13-37
+107        <service
+107-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:48:9-52:72
+108            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+108-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:49:13-87
+109            android:enabled="true"
+109-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:50:13-35
+110            android:exported="false"
+110-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:51:13-37
+111            android:permission="android.permission.BIND_JOB_SERVICE" />
+111-->[com.google.android.gms:play-services-measurement:17.2.2] /home/parker/.gradle/caches/transforms-2/files-2.1/a2d3f38d709f8b9f54c2677fdca8f29a/play-services-measurement-17.2.2/AndroidManifest.xml:52:13-69
+112
+113        <activity
+113-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
+114            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+114-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
+115            android:excludeFromRecents="true"
+115-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
+116            android:exported="false"
+116-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
+117            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+117-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
+118        <!--
+119            Service handling Google Sign-In user revocation. For apps that do not integrate with
+120            Google Sign-In, this service will never be started.
+121        -->
+122        <service
+122-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
+123            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+123-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
+124            android:exported="true"
+124-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
+125            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+125-->[com.google.android.gms:play-services-auth:16.0.1] /home/parker/.gradle/caches/transforms-2/files-2.1/d93dbe4f9eeef2277ccf83d342eaaa05/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+126
+127        <receiver
+127-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
+128            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+128-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
+129            android:exported="true"
+129-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
+130            android:permission="com.google.android.c2dm.permission.SEND" >
+130-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
+131            <intent-filter>
+131-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
+132                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+132-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
+132-->[com.google.firebase:firebase-iid:20.0.2] /home/parker/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
+133            </intent-filter>
+134        </receiver>
 135
-136        <activity
-136-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-137            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-137-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-138            android:exported="false"
-138-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-139            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-139-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-140
-141        <meta-data
-141-->[com.google.android.gms:play-services-basement:17.0.0] /home/parker/.gradle/caches/transforms-2/files-2.1/9143bf5f8dbf2e02c22469a062dbbf77/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-142            android:name="com.google.android.gms.version"
-142-->[com.google.android.gms:play-services-basement:17.0.0] /home/parker/.gradle/caches/transforms-2/files-2.1/9143bf5f8dbf2e02c22469a062dbbf77/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-143            android:value="@integer/google_play_services_version" />
-143-->[com.google.android.gms:play-services-basement:17.0.0] /home/parker/.gradle/caches/transforms-2/files-2.1/9143bf5f8dbf2e02c22469a062dbbf77/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-144    </application>
-145
-146</manifest>
+136        <provider
+136-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+137            android:name="com.google.firebase.provider.FirebaseInitProvider"
+137-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+138            android:authorities="com.jordyparker.budget_manager.firebaseinitprovider"
+138-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+139            android:exported="false"
+139-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+140            android:initOrder="100" />
+140-->[com.google.firebase:firebase-common:19.3.0] /home/parker/.gradle/caches/transforms-2/files-2.1/2144f3fa04cbe25248c3564eb7c6d191/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+141
+142        <activity
+142-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+143            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+143-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+144            android:exported="false"
+144-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+145            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+145-->[com.google.android.gms:play-services-base:17.1.0] /home/parker/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+146
+147        <meta-data
+147-->[com.google.android.gms:play-services-basement:17.0.0] /home/parker/.gradle/caches/transforms-2/files-2.1/9143bf5f8dbf2e02c22469a062dbbf77/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+148            android:name="com.google.android.gms.version"
+148-->[com.google.android.gms:play-services-basement:17.0.0] /home/parker/.gradle/caches/transforms-2/files-2.1/9143bf5f8dbf2e02c22469a062dbbf77/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+149            android:value="@integer/google_play_services_version" />
+149-->[com.google.android.gms:play-services-basement:17.0.0] /home/parker/.gradle/caches/transforms-2/files-2.1/9143bf5f8dbf2e02c22469a062dbbf77/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+150    </application>
+151
+152</manifest>
